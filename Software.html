@@ -5,18 +5,27 @@
     margin: 0;
   }
   #background{
-    height: 397px;
-    min-width: 1367px;
-    background-image: url(T--Kyoto--pagephoto-05.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    position:fixed;
+    min-width: 1024px;
+    width:100%;
+    z-index:-1;
+  }
+  #background-image{
+    width:100%;
+  }
+  #topbanner-wrapper{
+    min-width:1024px;
+    position:relative;
   }
   #topbanner{
+    position:absolute;
     width: 565px;
     height: 105px;
-    margin: 112px auto 113px;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
     background-image: url(T--Kyoto--titlesoftware.png);
     background-position: center center;
   }
@@ -49,101 +58,157 @@
     letter-spacing: normal;
     border: 1px solid #000;
   }
+  #contents{
+    background-color:#ffffff;
+  }
 </style>
 
 <head>
 <link href="common.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript">
+  window.onload = function bwWidth(){
+    var bw = document.getElementById("topbanner-wrapper");
+    var width = Math.max(parseInt(document.documentElement.clientWidth),1024);
+    var newwidth = width * 397 / 1368 - 72
+    bw.style.height = newwidth + "px";
+  }
+  window.onresize = function bwWidth(){
+    var bw = document.getElementById("topbanner-wrapper");
+    var width = Math.max(parseInt(document.documentElement.clientWidth),1024);
+    var newwidth = width * 397 / 1368 - 72
+    bw.style.height = newwidth + "px";
+  }
+</script>
 </head>
 <body>
   <div id="background">
+    <img id="background-image" src="T--Kyoto--pagephoto-05.png">
+  </div>
     <div id="header">
       <div id="nav-wrapper">
-        <div id="nav">
-          <ul>
-            <li id ="nv0"><a href="index.html"></a></li>
-            <li id ="nv1"><a href="project.html"></a></li>
-            <li id ="nv2"><a href="software.html"></a></li>
-            <li id ="nv3"><a href="achievements.html"></a></li>
-            <li id ="nv4"><a href="materials_and_methods.html"></a></li>
-            <li id ="nv5"><a href="practice.html"></a></li>
-            <li id ="nv6"><a href="notebook.html"></a></li>
-            <li id ="nv7"><a href="team.html"></a></li>
-            <li id ="nv8"><a href="consideration.html"></a></li>
+        <div class="nav">
+          <ul class="nv">
+            <li id ="nv0" style="width:56px"><a href="index.html"></a></li>
+            <li id ="nv1">
+              <a href="Description.html"></a>
+              <ul>
+                <li id="nv11"><a href="Description.html"></a></li>
+                <li id="nv12"><a href="Proof.html"></a></li>
+              </ul>
+            </li>
+            <li id ="nv2">
+              <a href="software.html"></a>
+              <ul>
+                <li id="nv21"><a href="Software.html"></a></li>
+                <li id="nv22"><a href="Collaborations.html"></a></li>
+              </ul>
+            </li>
+            <li id ="nv3"><a href="Achievements.html"></a></li>
+            <li id ="nv4"><a href="Experiments.html"></a></li>
+            <li id ="nv5">
+              <a href="Human_Practices.html"></a>
+              <ul>
+                <li id="nv51"><a href="Human_Practices.html"></a></li>
+                <li id="nv52"><a href="HP-Silver.html"></a></li>
+                <li id="nv53"><a href="HP-Gold.html"></a></li>
+              </ul>
+            </li>
+            <li id ="nv6"><a href="Notebook.html"></a></li>
+            <li id ="nv7">
+              <a href="Team.html"></a>
+              <ul>
+                <li id="nv71"><a href="Team.html"></a></li>
+                <li id="nv72"><a href="Attributions.html"></a></li>
+              </ul>
+            </li>
+            <li id ="nv8"><a href="Safety.html"></a></li>
           </ul>
         </div>
       </div>
     </div>
-    <div id="topbanner">
+    <div id="topbanner-wrapper">
+      <div id="topbanner">
+      </div>
     </div>
-  </div>
-  <div id="contents">
-    <div>
-      <h1>Overview</h1>
-      <p>We developed a software named "KELN": Kyoto-team Electronic Lab Note.
-    Have you ever felt it difficult to write tables in html documents? KELN is a solution! KELN provides you user-friendly graphical user interface so that those who don't know html tags can make tables in html documents very easily!</p>
-    </div>
+    <div id="contents-wrapper">
+      <div id="contents">
+        <div>
+          <h1>Overview</h1>
+          <p>We developed a software named "KELN": Kyoto-team Electronic Lab Note.
+        Have you ever felt it difficult to write tables in html documents? KELN is a solution! KELN provides you user-friendly graphical user interface so that those who don't know html tags can make tables in html documents very easily!</p>
+        </div>
 
-    <div>
-      <h1>Background story</h1>
-      <p>Before we developed this software, it took a long time to write HTML documents such as tables of our lab notes. Because not all of us are good at HTML works, one or two HTML experts in our team did all works. We thought how wonderful it would be if we could assign this work to other members in our team. </p>
-    </div>
+        <div>
+          <h1>Background story</h1>
+          <p>Before we developed this software, it took a long time to write HTML documents such as tables of our lab notes. Because not all of us are good at HTML works, one or two HTML experts in our team did all works. We thought how wonderful it would be if we could assign this work to other members in our team. </p>
+        </div>
 
-    <div>
-      <h1>Improvements</h1>
-      <h2>Speed</h2>
-      <p>KELN improved writing speed dramatically.</p>
-      <h2>Consistency</h2>
-      <p>You don't have to worry about syntax errors. All files generated by KELN are formatted in the same way, including class tags for custormizing their appearance.</p>
-    </div>
+        <div>
+          <h1>Improvements</h1>
+          <h2>Speed</h2>
+          <p>KELN improved writing speed dramatically.</p>
+          <h2>Consistency</h2>
+          <p>You don't have to worry about syntax errors. All files generated by KELN are formatted in the same way, including class tags for custormizing their appearance.</p>
+        </div>
 
-    <div>
-      <h1>User's voice</h1>
-      <p></p>
-    </div>
+        <div>
+          <h1>User's voice</h1>
+          <p></p>
+        </div>
 
-    <div>
-      <h1>How to use</h1>
-      <ul>
-        <li>Enter the date of an experiment</li>
-        <img src="T--Kyoto--kelnmanual_1.png" width="388" height="336">
-        <li>Select the author</li>
-        <img src="T--Kyoto--kelnmanual_2.png" width="388" height="336">
-        <li>Check your teammates who conducted the experiment</li>
-        <img src="T--Kyoto--kelnmanual_3.png" width="388" height="336">
-        <li>Choose a template</li>
-        <img src="T--Kyoto--kelnmanual_4.png" width="388" height="336">
-        <li>Edit the table</li>
-        <img src="T--Kyoto--kelnmanual_5.png" width="388" height="336">
-        <li>Push convert button</li>
-        <img src="T--Kyoto--kelnmanual_6.png" width="388" height="336">
-      </ul>
-    </div>
+        <div>
+          <h1>How to use</h1>
+          <ul>
+            <li>Enter the date of an experiment</li>
+            <img src="T--Kyoto--kelnmanual_1.png" width="388" height="336">
+            <li>Select the author</li>
+            <img src="T--Kyoto--kelnmanual_2.png" width="388" height="336">
+            <li>Check your teammates who conducted the experiment</li>
+            <img src="T--Kyoto--kelnmanual_3.png" width="388" height="336">
+            <li>Choose a template</li>
+            <img src="T--Kyoto--kelnmanual_4.png" width="388" height="336">
+            <li>Edit the table</li>
+            <img src="T--Kyoto--kelnmanual_5.png" width="388" height="336">
+            <li>Push convert button</li>
+            <img src="T--Kyoto--kelnmanual_6.png" width="388" height="336">
+          </ul>
+        </div>
 
-    <div>
-      <h1> Additional features</h1>
-      <p>You can add descriptions of the table here</p>
-      <img src="T--Kyoto--kelnmanual_7.png" width="388" height="336">
-      <p>You can also make custom tables. Please enter the numbers of colmns and table titel here, then push "apply" button.</p>
-      <img src="T--Kyoto--kelnmanual_8.png" width="388" height="336">
-      <p>Note: first row of the table will be titles of columns.</p>
-    </div>
+        <div>
+          <h1> Additional features</h1>
+          <p>You can add descriptions of the table here</p>
+          <img src="T--Kyoto--kelnmanual_7.png" width="388" height="336">
+          <p>You can also make custom tables. Please enter the numbers of colmns and table titel here, then push "apply" button.</p>
+          <img src="T--Kyoto--kelnmanual_8.png" width="388" height="336">
+          <p>Note: first row of the table will be titles of columns.</p>
+        </div>
 
-    <div>
-      <h1>Customize for your team</h1>
-      <p>You can customize the checkboxes of teammates in KELN by editing settings.txt.</p>
-      <p>note: Please write names separated by comma. If KELN says "Syntax error", please confirm that settings.txt is correct.</p>
-      <p>Because KELN is a open source, everyone can modify this software. Please add functions you need, and start writing electronic lab notes today! </p>
-    </div>
+        <div>
+          <h1>Customize for your team</h1>
+          <p>You can customize the checkboxes of teammates in KELN by editing settings.txt.</p>
+          <p>note: Please write names separated by comma. If KELN says "Syntax error", please confirm that settings.txt is correct.</p>
+          <p>Because KELN is a open source, everyone can modify this software. Please add functions you need, and start writing electronic lab notes today! </p>
+        </div>
 
-    <div>
-      <h1>Downloads</h1>
-      <p>KELN is now available on <a href="https://github.com/iGEMKyoto/KELN/releases">https://github.com/iGEMKyoto/KELN/releases</a>.</p>
+        <div>
+          <h1>Downloads</h1>
+          <p>KELN is now available on <a href="https://github.com/iGEMKyoto/KELN/releases">https://github.com/iGEMKyoto/KELN/releases</a>.</p>
+        </div>
 
-    </div>
-
+      </div>
   </div>
   <div id="footer">
-    footer
+    <div id="footer_logos">
+      <img src="T--Kyoto--Footer-24.png" width="874" height="95">
+    </div>
+    <div id="footer_contact">
+      <img src="T--Kyoto--Footer-25.png">
+    </div>
+    <div id="footer_social">
+      <a href="mailto:igemkyoto@gmail.com"><img src="T--Kyoto--Footer-28.png"></a>
+      <a href="https://twitter.com/igemkyoto"><img src="T--Kyoto--Footer-26.png"></a>
+      <a href="https://www.facebook.com/IgemKyoto/"><img src="T--Kyoto--Footer-27.png"></a>
+    </div>
   </div>
 </body>
 </html>

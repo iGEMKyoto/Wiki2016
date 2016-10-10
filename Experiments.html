@@ -5,18 +5,27 @@
     margin: 0;
   }
   #background{
-    height: 397px;
-    min-width: 1367px;
-    background-image: url(T--Kyoto--pagephoto-02.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    position:fixed;
+    min-width: 1024px;
+    width:100%;
+    z-index:-1;
+  }
+  #background-image{
+    width:100%;
+  }
+  #topbanner-wrapper{
+    min-width:1024px;
+    position:relative;
   }
   #topbanner{
+    position:absolute;
     width: 565px;
     height: 105px;
-    margin: 112px auto 113px;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
     background-image: url(T--Kyoto--titlematerials.png);
     background-position: center center;
   }
@@ -49,83 +58,139 @@
     letter-spacing: normal;
     border: 1px solid #000;
   }
+  #contents{
+    background-color:#ffffff;
+  }
 </style>
 
 <head>
 <link href="common.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript">
+  window.onload = function bwWidth(){
+    var bw = document.getElementById("topbanner-wrapper");
+    var width = Math.max(parseInt(document.documentElement.clientWidth),1024);
+    var newwidth = width * 397 / 1368 - 72
+    bw.style.height = newwidth + "px";
+  }
+  window.onresize = function bwWidth(){
+    var bw = document.getElementById("topbanner-wrapper");
+    var width = Math.max(parseInt(document.documentElement.clientWidth),1024);
+    var newwidth = width * 397 / 1368 - 72
+    bw.style.height = newwidth + "px";
+  }
+</script>
 </head>
 <body>
   <div id="background">
+    <img id="background-image" src="T--Kyoto--pagephoto-02.png">
+  </div>
     <div id="header">
       <div id="nav-wrapper">
-        <div id="nav">
-          <ul>
-            <li id ="nv0"><a href="index.html"></a></li>
-            <li id ="nv1"><a href="project.html"></a></li>
-            <li id ="nv2"><a href="software.html"></a></li>
-            <li id ="nv3"><a href="achievements.html"></a></li>
-            <li id ="nv4"><a href="materials_and_methods.html"></a></li>
-            <li id ="nv5"><a href="practice.html"></a></li>
-            <li id ="nv6"><a href="notebook.html"></a></li>
-            <li id ="nv7"><a href="team.html"></a></li>
-            <li id ="nv8"><a href="consideration.html"></a></li>
+        <div class="nav">
+          <ul class="nv">
+            <li id ="nv0" style="width:56px"><a href="index.html"></a></li>
+            <li id ="nv1">
+              <a href="Description.html"></a>
+              <ul>
+                <li id="nv11"><a href="Description.html"></a></li>
+                <li id="nv12"><a href="Proof.html"></a></li>
+              </ul>
+            </li>
+            <li id ="nv2">
+              <a href="software.html"></a>
+              <ul>
+                <li id="nv21"><a href="Software.html"></a></li>
+                <li id="nv22"><a href="Collaborations.html"></a></li>
+              </ul>
+            </li>
+            <li id ="nv3"><a href="Achievements.html"></a></li>
+            <li id ="nv4"><a href="Experiments.html"></a></li>
+            <li id ="nv5">
+              <a href="Human_Practices.html"></a>
+              <ul>
+                <li id="nv51"><a href="Human_Practices.html"></a></li>
+                <li id="nv52"><a href="HP-Silver.html"></a></li>
+                <li id="nv53"><a href="HP-Gold.html"></a></li>
+              </ul>
+            </li>
+            <li id ="nv6"><a href="Notebook.html"></a></li>
+            <li id ="nv7">
+              <a href="Team.html"></a>
+              <ul>
+                <li id="nv71"><a href="Team.html"></a></li>
+                <li id="nv72"><a href="Attributions.html"></a></li>
+              </ul>
+            </li>
+            <li id ="nv8"><a href="Safety.html"></a></li>
           </ul>
         </div>
       </div>
     </div>
-    <div id="topbanner">
+    <div id="topbanner-wrapper">
+      <div id="topbanner">
+      </div>
     </div>
-  </div>
-  <div id="contents">
-    <div>
-      <h1>header 1</h1>
-      <h2>header 2</h2>
-      <h3>header 3</h3>
-      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
-      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
-      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
-      <ul>
-        <li>listlistlistlistlist</li>
-        <li>listlistlistlistlist</li>
-        <li>listlistlistlistlist</li>
-        <li>listlistlistlistlist</li>
-        <li>listlistlistlistlist</li>
-      </ul>
-    </div>
-    <div>
-      <h1>header 1</h1>
-      <h2>header 2</h2>
-      <h3>header 3</h3>
-      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
-      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
-      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
-      <ul>
-        <li>listlistlistlistlist</li>
-        <li>listlistlistlistlist</li>
-        <li>listlistlistlistlist</li>
-        <li>listlistlistlistlist</li>
-        <li>listlistlistlistlist</li>
-      </ul>
-    </div>
-    <div>
-      <h1>header 1</h1>
-      <h2>header 2</h2>
-      <h3>header 3</h3>
-      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
-      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
-      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
-      <ul>
-        <li>listlistlistlistlist</li>
-        <li>listlistlistlistlist</li>
-        <li>listlistlistlistlist</li>
-        <li>listlistlistlistlist</li>
-        <li>listlistlistlistlist</li>
-      </ul>
-    </div>
-
+    <div id="contents-wrapper">
+	  <div id="contents">
+	    <div>
+	      <h1>header 1</h1>
+	      <h2>header 2</h2>
+	      <h3>header 3</h3>
+	      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+	      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+	      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+	      <ul>
+	        <li>listlistlistlistlist</li>
+	        <li>listlistlistlistlist</li>
+	        <li>listlistlistlistlist</li>
+	        <li>listlistlistlistlist</li>
+	        <li>listlistlistlistlist</li>
+	      </ul>
+	    </div>
+	    <div>
+	      <h1>header 1</h1>
+	      <h2>header 2</h2>
+	      <h3>header 3</h3>
+	      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+	      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+	      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+	      <ul>
+	        <li>listlistlistlistlist</li>
+	        <li>listlistlistlistlist</li>
+	        <li>listlistlistlistlist</li>
+	        <li>listlistlistlistlist</li>
+	        <li>listlistlistlistlist</li>
+	      </ul>
+	    </div>
+	    <div>
+	      <h1>header 1</h1>
+	      <h2>header 2</h2>
+	      <h3>header 3</h3>
+	      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+	      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+	      <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+	      <ul>
+	        <li>listlistlistlistlist</li>
+	        <li>listlistlistlistlist</li>
+	        <li>listlistlistlistlist</li>
+	        <li>listlistlistlistlist</li>
+	        <li>listlistlistlistlist</li>
+	      </ul>
+	    </div>
+      </div>
   </div>
   <div id="footer">
-    footer
+    <div id="footer_logos">
+      <img src="T--Kyoto--Footer-24.png" width="874" height="95">
+    </div>
+    <div id="footer_contact">
+      <img src="T--Kyoto--Footer-25.png">
+    </div>
+    <div id="footer_social">
+      <a href="mailto:igemkyoto@gmail.com"><img src="T--Kyoto--Footer-28.png"></a>
+      <a href="https://twitter.com/igemkyoto"><img src="T--Kyoto--Footer-26.png"></a>
+      <a href="https://www.facebook.com/IgemKyoto/"><img src="T--Kyoto--Footer-27.png"></a>
+    </div>
   </div>
 </body>
 </html>
